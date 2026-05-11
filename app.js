@@ -399,7 +399,7 @@ function dashboardView() {
       return [
         [prazoStr, "prazo de lançamento", "clock"],
         ["8",      "notas pendentes",     "notebook-pen"],
-        ["86%",    "preenchimento atual", "chart-no-axes-column-increasing"],
+        ["86%",    "Registro atual", "chart-no-axes-column-increasing"],
         ["3",      "turmas vinculadas",   "users-round"]
       ];
     })(),
@@ -471,7 +471,7 @@ function dashboardView() {
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>Turma</th><th>Segmento</th><th>Preenchimento</th><th>Situação</th></tr>
+                <tr><th>Turma</th><th>Segmento</th><th>Registro</th><th>Situação</th></tr>
               </thead>
               <tbody>
                 ${(state.role === "coordenacao" ? turmas.filter(t => t.segment === "Ensino Médio") : turmas).slice(0, 5).map((turma) => `
@@ -987,7 +987,7 @@ function lancamentoView() {
                     <b class="score-pill ${scoreClass(student.scores.MT)}">${student.scores.MT.toFixed(1)}</b>
                   </td>
                   <td>
-                    <span class="status ${index === 3 ? "wait" : "ok"}">${index === 3 ? "Pendente" : "Preenchido"}</span>
+                    <span class="status ${index === 3 ? "wait" : "ok"}">${index === 3 ? "Pendente" : "Registro"}</span>
                   </td>
                 </tr>
               `).join("")}
