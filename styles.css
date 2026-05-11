@@ -730,16 +730,44 @@ button { border: 0; }
   border-radius: var(--radius-inner);
 }
 
+.panel .table-wrap {
+  overflow-x: hidden;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   min-width: 580px;
 }
 
+.panel table:not(.grade-table) {
+  min-width: 0;
+  table-layout: fixed;
+}
+
 th, td {
   padding: 11px 14px;
   text-align: left;
   vertical-align: middle;
+}
+
+.panel table:not(.grade-table) th,
+.panel table:not(.grade-table) td {
+  padding: 10px 12px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.panel table:not(.grade-table) th:last-child,
+.panel table:not(.grade-table) td:last-child {
+  width: 26%;
+}
+
+.panel table:not(.grade-table) .status,
+.panel table:not(.grade-table) .tag,
+.panel table:not(.grade-table) .secondary-button {
+  max-width: 100%;
+  white-space: normal;
 }
 
 th {
